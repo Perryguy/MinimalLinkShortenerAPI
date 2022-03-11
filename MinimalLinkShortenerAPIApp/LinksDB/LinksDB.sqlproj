@@ -71,4 +71,10 @@
   <ItemGroup>
     <RefactorLog Include="LinksDB.refactorlog" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LinksDB.publish.xml" />
+  </ItemGroup>
 </Project>
