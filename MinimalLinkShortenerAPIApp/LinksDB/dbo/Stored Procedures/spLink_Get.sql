@@ -2,7 +2,7 @@
 	@LinkName nvarchar(50)
 AS
 begin
-	select Id, LinkName, LinkURL, LinkDescription, CreatedAt
+	select Id, LinkName, LinkURL, LinkDescription, CreatedAt, UpdatedOn
 	from dbo.[Links]
 	where LinkName = @LinkName;
 end

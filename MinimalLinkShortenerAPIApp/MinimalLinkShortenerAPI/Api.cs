@@ -7,6 +7,10 @@ public static class Api
         //All of API Mapping goes below
         app.MapGet("/users", GetLinks);
         app.MapGet("/users/{linkName}", GetLink);
+        app.MapPost("/users", InsertLink);
+        app.MapPut("/users", UpdateLink);
+        app.MapDelete("/users", DeleteLink);
+        
     }
 
     private static async Task<IResult> GetLinks(ILinkData data)
@@ -31,6 +35,43 @@ public static class Api
                 return Results.NotFound();
             }
             return Results.Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return Results.Problem(ex.Message);
+        }
+    }
+
+    private static async Task<IResult> InsertLink(LinkModel link, ILinkData data)
+    {
+        try
+        {
+            await data.InsertLink(link);
+            return Results.Ok();
+        }
+        catch (Exception ex)
+        {
+            return Results.Problem(ex.Message);
+        }
+    }
+    private static async Task<IResult> UpdateLink(LinkModel link, ILinkData data)
+    {
+        try
+        {
+            await data.UpdateLink(link);
+            return Results.Ok();
+        }
+        catch (Exception ex)
+        {
+            return Results.Problem(ex.Message);
+        }
+    }
+    private static async Task<IResult> DeleteLink(string linkName, ILinkData data)
+    {
+        try
+        {
+            await data.DeleteLink(linkName);
+            return Results.Ok();
         }
         catch (Exception ex)
         {

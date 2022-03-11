@@ -60,7 +60,7 @@ public class LinkData : ILinkData
     /// </summary>
     /// <param name="link">LinkModel</param>
     /// <returns></returns>
-    public Task DeleteLink(LinkModel link) =>
-        _db.SaveData("dbo.spLink_Delete", new { link.LinkName });
+    public Task DeleteLink(string linkName) =>
+        _db.SaveData("dbo.spLink_Delete", new { linkName });
 }
 
