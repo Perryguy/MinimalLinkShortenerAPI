@@ -22,7 +22,7 @@ public class LinkData : ILinkData
     /// </summary>
     /// <returns>All links</returns>
     //Passed a empty dynamic as no parameters to pass.
-    public Task<IEnumerable<LinkModel>> GetLinks =>
+    public Task<IEnumerable<LinkModel>> GetLinks() =>
         _db.LoadData<LinkModel, dynamic>("dbo.spLink_GetAll", new { });
 
     /// <summary>

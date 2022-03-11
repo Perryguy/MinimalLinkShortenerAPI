@@ -4,8 +4,7 @@ namespace DataAccess.Data;
 
 public interface ILinkData
 {
-    Task<IEnumerable<LinkModel>> GetLinks { get; }
-
+    Task<IEnumerable<LinkModel>> GetLinks();
     Task DeleteLink(LinkModel link);
     Task<LinkModel?> GetLink(string linkName);
     Task InsertLink(LinkModel link);
