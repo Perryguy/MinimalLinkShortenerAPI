@@ -1,8 +1,7 @@
-﻿CREATE PROCEDURE [dbo].[spLink_Get]
+﻿CREATE PROCEDURE [dbo].[spLink_Search]
 	@LinkName nvarchar(50)
 AS
 begin
-
 	Update dbo.[Links]
 		Set Hits =
 			(Case
@@ -11,8 +10,10 @@ begin
 				End
 			)
 
-	select LinkURL
+
+	select Id, LinkName, LinkURL, LinkDescription, CreatedAt, UpdatedOn, Hits
 	from dbo.[Links]
-	where LinkName = @LinkName;
+	where LinkName like @LinkName + '%';
 
 end
+

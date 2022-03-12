@@ -10,7 +10,7 @@
 AS
 begin
 	update dbo.[Links]
-	set LinkName = @LinkName, LinkURL = @LinkURL, LinkDescription = @LinkDescription, UpdatedOn = GETDATE() 
+	set LinkName = @LinkName, LinkURL = @LinkURL, LinkDescription = @LinkDescription, UpdatedOn = GETDATE()
 	where LinkName = @LinkName;
 end
 
