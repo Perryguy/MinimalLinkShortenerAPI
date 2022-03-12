@@ -5,11 +5,11 @@ public static class Api
     public static void ConfigureApi(this WebApplication app)
     {
         //All of API Mapping goes below
-        app.MapGet("/users", GetLinks);
-        app.MapGet("/users/{linkName}", GetLink);
-        app.MapPost("/users", InsertLink);
-        app.MapPut("/users", UpdateLink);
-        app.MapDelete("/users", DeleteLink);
+        app.MapGet("/links", GetLinks);
+        app.MapGet("/link/{linkName}", GetLink);
+        app.MapPost("/links", InsertLink);
+        app.MapPut("/Links", UpdateLink);
+        app.MapDelete("/links", DeleteLink);
         
     }
 
