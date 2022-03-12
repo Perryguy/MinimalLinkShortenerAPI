@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalLinkShortenerAPI", "
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "LinksDB", "LinksDB\LinksDB.sqlproj", "{440C6F79-C89E-4F40-9BCB-E934644DC56A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{20BE2020-31C9-465F-BEEC-5942E61020A0}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8FF145AC-D734-49F5-B8FA-44090315A6EF}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
@@ -30,10 +28,6 @@ Global
 		{440C6F79-C89E-4F40-9BCB-E934644DC56A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{440C6F79-C89E-4F40-9BCB-E934644DC56A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{440C6F79-C89E-4F40-9BCB-E934644DC56A}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{20BE2020-31C9-465F-BEEC-5942E61020A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20BE2020-31C9-465F-BEEC-5942E61020A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20BE2020-31C9-465F-BEEC-5942E61020A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20BE2020-31C9-465F-BEEC-5942E61020A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

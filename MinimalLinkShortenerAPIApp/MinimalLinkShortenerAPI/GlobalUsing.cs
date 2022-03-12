@@ -1,2 +1,2 @@
-﻿global using DataAccess.Data;
-global using DataAccess.Models;
+﻿global using SimpleSQLDataAccess.Data;
+global using SimpleSQLDataAccess.Models;

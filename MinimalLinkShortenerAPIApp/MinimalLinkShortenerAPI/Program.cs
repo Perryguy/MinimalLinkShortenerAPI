@@ -1,4 +1,4 @@
-using DataAccess.DbAccess;
+using SimpleSQLDataAccess.DbAccess;
 using MinimalLinkShortenerAPI;
 
 var builder = WebApplication.CreateBuilder(args);
