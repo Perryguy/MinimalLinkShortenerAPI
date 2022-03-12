@@ -6,7 +6,7 @@ public interface ILinkData
 {
     Task<IEnumerable<LinkModel>> GetLinks();
     Task DeleteLink(string linkName);
-    Task<LinkURLModel?> GetLink(string linkName);
+    Task<IEnumerable<LinkModel?>> GetLink(string linkName);
     Task InsertLink(LinkModel link);
     Task UpdateLink(LinkModel link);
 }

@@ -11,8 +11,8 @@ begin
 				End
 			)
 
-	select LinkURL
+	select Id, LinkName, LinkURL, LinkDescription, CreatedAt, UpdatedOn, Hits
 	from dbo.[Links]
-	where LinkName = @LinkName;
+	where LinkName like @LinkName + '%';
 
 end

@@ -31,12 +31,12 @@ public class LinkData : ILinkData
     /// <param name="linkName">The link name of desired link</param>
     /// <returns>LinkName,LinkURL, LinkDescription, CreatedAt, UpdatedOn. Or if Link cannot be found
     /// returns NULL</returns>
-    public async Task<LinkURLModel?> GetLink(string linkName)
+    public async Task<IEnumerable<LinkModel?>> GetLink(string linkName)
     {
-        var results = await _db.LoadData<LinkURLModel, dynamic>(
+        var results = await _db.LoadData<LinkModel, dynamic>(
             "dbo.spLink_Get",
             new { LinkName = linkName });
-        return results.FirstOrDefault();
+        return results;
     }
 
     /// <summary>
