@@ -4,7 +4,8 @@
 	@LinkURL nvarchar(300),
 	@LinkDescription nvarchar(300),
 	@CreatedAt datetime,
-	@UpdatedOn datetime
+	@UpdatedOn datetime,
+	@Hits datetime
 
 AS
 begin
