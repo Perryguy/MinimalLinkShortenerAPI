@@ -1,0 +1,67 @@
+﻿@page "/links"
+@using LinkShortenerFrontend.Models
+
+@inject IHttpClientFactory _clientFactory
+
+<h3>Link Data</h3>
+@if (string.IsNullOrWhiteSpace(errorString) == false)
+{
+    <div class="h2">@errorString</div>
+}
+else if (links is null)
+{
+    <div class="h2"> Loading... </div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Link Name</th>
+                <th>Link URL</th>
+                <th>Link Description</th>
+                <th>Created At</th>
+                <th>Updated On</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var link in links)
+            {
+                <tr>
+                    <td>@link.Id</td>
+                    <td>@link.LinkName</td>
+                    <td>@link.LinkURL</td>
+                    <td>@link.LinkDescription</td>
+                    <td>@link.CreatedAt</td>
+                    <td>@link.UpdatedOn</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<LinkModel>? links;
+    string? errorString;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get,
+            "https://localhost:5001/links/");
+
+        var client = _clientFactory.CreateClient();
+
+        HttpResponseMessage response = await client.SendAsync(request);
+
+        if (response.IsSuccessStatusCode)
+        {
+            links = await response.Content.ReadFromJsonAsync<List<LinkModel>>();
+            errorString = null;
+        }
+        else
+        {
+            errorString = ("Error getting link data: " + response.ReasonPhrase);
+        }
+    }
+}
